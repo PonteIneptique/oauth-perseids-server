@@ -86,10 +86,8 @@
 			'logout' => array(
 				'logout_path' => '/user/logout',
 			),
-			/*'oauth2_authorize' => array(
-				'pattern' => '^/api/v1.0/oauth2/authorize$',
-				'http' => true,
-			),*/
+
+
 			'users' => $app->share(function($app) { return $app['user.manager']; }),
 		),
 		'oauth2_authorize' => array(
@@ -105,6 +103,11 @@
 			'pattern' => '^/rest/oauth2/debug$',
 			'oauth2_resource' => true,
 		),
+	);
+
+	$app['security.access_rules'] = array(
+	    array('^/clients', 'ROLE_ADMIN', 'http'),
+	    array('^.*$', 'ROLE_USER'),
 	);
 
 	$app['user.passwordStrengthValidator'] = $app->protect(function(SimpleUser\User $user, $password) {

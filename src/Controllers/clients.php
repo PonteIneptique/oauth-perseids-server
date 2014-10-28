@@ -33,8 +33,13 @@ class Clients implements ServiceProviderInterface, ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
-        $app->get('/clients', function() {
-            return "Placeholder";
+        $app->get('/clients', function(Application $app) {
+            if ($app['security']->isGranted('ROLE_ADMIN')) {
+                $text = "admin";
+            } else {
+                $text = "Not Admin";
+            }
+            return $text;
         })->bind('clients-list');
 
         return $controllers;
