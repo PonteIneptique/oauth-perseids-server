@@ -1,6 +1,7 @@
 <?php
-	require_once __DIR__."/Controllers/oauth2.php";
-	require_once __DIR__."/Controllers/clients.php";
+	require_once __DIR__."/Controllers/Perseids/oAuth2.php";
+	require_once __DIR__."/Controllers/Perseids/Clients/Manager.php";
+	require_once __DIR__."/Entity/Client.php";
 
 	$app = new Silex\Application(); 
 	
@@ -29,7 +30,7 @@
 	$app->register($oAuth);
 
 	/* oAuth2 Instance*/
-	$clients = new Perseids\Clients();
+	$clients = new Perseids\Clients\Manager();
 	$app->register($clients);
 
 	/* Debug Mode */

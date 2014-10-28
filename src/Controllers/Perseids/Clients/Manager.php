@@ -1,32 +1,24 @@
 <?php
-
-/**
- * Original headers :
- *
- * 
- * This file is part of the authbucket/oauth2-php package.
- *
- * (c) Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace Perseids;
+namespace Perseids\Clients;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
 use Silex\ServiceProviderInterface;
+use AuthBucket\OAuth2\Entity\Clients;
 
-/**
- * OAuth2 service provider as plugin for Silex SecurityServiceProvider.
- *
- * @author Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
- */
-class Clients implements ServiceProviderInterface, ControllerProviderInterface
+class Manager implements ServiceProviderInterface, ControllerProviderInterface
 {
+    public function load() {
+        /* Just some test stuff*/
+        $model = new Client();
+        $model  ->setClientId('51b2d34c3a661b5e111a694dfcb4b248')
+                ->setClientSecret('237ed57f218b41d07db6757afec3a41c')
+                ->setRedirectUri('http://oauthconnector.demo.drupal.authbucket.com/oauth/authorized2/1');
+        $manager->persist($model);
+    }
     public function register(Application $app)
-    {     
+    {      
+
     }
 
     public function connect(Application $app)
