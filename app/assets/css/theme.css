@@ -1,0 +1,7 @@
+html, body {
+	min-height:100%;
+}
+.site-logo {
+	width:120px;
+	height:auto;
+}

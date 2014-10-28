@@ -1,38 +1,40 @@
 <?php
 	$app = new Silex\Application(); 
 	
-	/* Register needed by authbucket oauth-2 */
-	$app->register(new AuthBucket\OAuth2\Provider\AuthBucketOAuth2ServiceProvider());
-	$app->register(new Silex\Provider\SecurityServiceProvider());
-	$app->register(new Silex\Provider\SerializerServiceProvider());
-	$app->register(new Silex\Provider\ServiceControllerServiceProvider());
-	$app->register(new Silex\Provider\ValidatorServiceProvider());
-
 	/*Register Needed by SimpleUser*/
 	$app->register(new Silex\Provider\DoctrineServiceProvider());
 	$app->register(new Silex\Provider\SecurityServiceProvider());
 	$app->register(new Silex\Provider\RememberMeServiceProvider());
 	$app->register(new Silex\Provider\SessionServiceProvider());
-	$app->register(new Silex\Provider\ServiceControllerServiceProvider());
 	$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 	$app->register(new Silex\Provider\TwigServiceProvider());
 	$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
+	/* Register needed by authbucket oauth-2 */
+	$app->register(new Silex\Provider\SerializerServiceProvider());
+	$app->register(new Silex\Provider\ServiceControllerServiceProvider());
+	$app->register(new Silex\Provider\ValidatorServiceProvider());
+
+
+	/* SimpleUser Instance */
 	$simpleUserProvider = new SimpleUser\UserServiceProvider();
 	$app->register($simpleUserProvider);
 
+	/* oAuth2 Instance*/
+	$oAuth = new AuthBucket\OAuth2\Provider\AuthBucketOAuth2ServiceProvider();
+	$app->register($oAuth);
 
 	/* Debug Mode */
 	$app['debug'] = true;
 
 	/* Routes */
 	$app->mount('/user', $simpleUserProvider);
+	$app->mount('/', $oAuth);
 
 	$app->get('/', function () use ($app) {
 	    return $app['twig']->render('index.twig', array());
 	});
 
-	$app['user.options'] = array();
 
 	/* TWIG Configuration */
 	$app['twig.path'] = array(__DIR__.'/../templates');
@@ -80,6 +82,15 @@
 			return 'Your password cannot be the same as your name.';
 		}
 	});
+
+
+	$app['user.options'] = array(
+    	// Specify custom view templates here.
+    	'templates' => array(
+    		//Setting the General Layout
+    		'layout' => "layout.twig"
+    	)
+    );
 
 	return $app;
 ?>
