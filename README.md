@@ -14,3 +14,5 @@ mv composer.phar /usr/local/bin/composer
 ###Running composer
 **Warning for fresh Server instance** : One of the dependency of authbucket, guzzle, need curl extension for php. To install it, do `sudo apt-get install php5-curl` on a linux machine
 In the root directory of this git, do `composer install`
+
+##Database

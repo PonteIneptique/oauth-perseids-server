@@ -72,5 +72,14 @@
 		),
 	);
 
+	$app['user.passwordStrengthValidator'] = $app->protect(function(SimpleUser\User $user, $password) {
+		if (strlen($password) < 4) {
+			return 'Password must be at least 4 characters long.';
+		}
+		if (strtolower($password) == strtolower($user->getName())) {
+			return 'Your password cannot be the same as your name.';
+		}
+	});
+
 	return $app;
 ?>
