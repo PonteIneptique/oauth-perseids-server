@@ -1,19 +1,23 @@
 <?php
+	require_once __DIR__."/Controllers/oauth2.php";
+	require_once __DIR__."/Controllers/clients.php";
+
 	$app = new Silex\Application(); 
 	
+	/* Register needed by authbucket oauth-2 */
+	$app->register(new Silex\Provider\SecurityServiceProvider());
+	$app->register(new Silex\Provider\SerializerServiceProvider());
+	$app->register(new Silex\Provider\ServiceControllerServiceProvider());
+	$app->register(new Silex\Provider\ValidatorServiceProvider());
+
 	/*Register Needed by SimpleUser*/
 	$app->register(new Silex\Provider\DoctrineServiceProvider());
-	$app->register(new Silex\Provider\SecurityServiceProvider());
 	$app->register(new Silex\Provider\RememberMeServiceProvider());
 	$app->register(new Silex\Provider\SessionServiceProvider());
 	$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 	$app->register(new Silex\Provider\TwigServiceProvider());
 	$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
-	/* Register needed by authbucket oauth-2 */
-	$app->register(new Silex\Provider\SerializerServiceProvider());
-	$app->register(new Silex\Provider\ServiceControllerServiceProvider());
-	$app->register(new Silex\Provider\ValidatorServiceProvider());
 
 
 	/* SimpleUser Instance */
@@ -21,15 +25,20 @@
 	$app->register($simpleUserProvider);
 
 	/* oAuth2 Instance*/
-	$oAuth = new AuthBucket\OAuth2\Provider\AuthBucketOAuth2ServiceProvider();
+	$oAuth = new Perseids\OAuth2();
 	$app->register($oAuth);
+
+	/* oAuth2 Instance*/
+	$clients = new Perseids\Clients();
+	$app->register($clients);
 
 	/* Debug Mode */
 	$app['debug'] = true;
 
 	/* Routes */
-	$app->mount('/user', $simpleUserProvider);
 	$app->mount('/', $oAuth);
+	$app->mount('/', $clients);
+	$app->mount('/user', $simpleUserProvider);
 
 	$app->get('/', function () use ($app) {
 	    return $app['twig']->render('index.twig', array());
@@ -49,6 +58,13 @@
 		'password' => 'perseids',
 	);
 
+
+	//Security Encoder for it
+	/*
+	$app['security.encoder.digest'] = $app->share(function ($app) {
+		return new PlaintextPasswordEncoder();
+	});
+	*/
 	// Mailer config. See http://silex.sensiolabs.org/doc/providers/swiftmailer.html
 	$app['swiftmailer.options'] = array();
 
@@ -70,7 +86,24 @@
 			'logout' => array(
 				'logout_path' => '/user/logout',
 			),
+			/*'oauth2_authorize' => array(
+				'pattern' => '^/api/v1.0/oauth2/authorize$',
+				'http' => true,
+			),*/
 			'users' => $app->share(function($app) { return $app['user.manager']; }),
+		),
+		'oauth2_authorize' => array(
+			'pattern' => '^/rest/oauth2/authorize$',
+			'http' => true,
+			'users' => $app->share(function($app) { return $app['user.manager']; }), #We reuse the stuff from SimpleUser
+		),
+		'oauth2_token' => array(
+	        'pattern' => '^/rest/oauth2/token$',
+	        'oauth2_token' => true,
+	    ),
+	    'oauth2_debug' => array(
+			'pattern' => '^/rest/oauth2/debug$',
+			'oauth2_resource' => true,
 		),
 	);
 

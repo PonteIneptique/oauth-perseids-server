@@ -16,3 +16,15 @@ mv composer.phar /usr/local/bin/composer
 In the root directory of this git, do `composer install`
 
 ##Database
+
+##Testing the oAuth
+- http://oauth.perseids.org/api/v1.0/oauth2/authorize
+```json
+{
+  'client_id' : 'implicit_grant'
+  'redirect_uri' : 'http://oauth.perseids.org'
+  'response_type' : 'token'
+  'scope' : 'demoscope1 demoscope2 demoscope3'
+  'state' : 'olcvl4u3vltckpua6hrm4s6b11'
+}
+```
