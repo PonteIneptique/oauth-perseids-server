@@ -1,6 +1,7 @@
 {
     "require": {
         "silex/silex": "~1.2",
-        "authbucket/oauth2-php": "~2.3"
+        "authbucket/oauth2-php": "~2.3",
+        "jasongrimes/silex-simpleuser": "~1.7"
     }
 }
