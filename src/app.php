@@ -3,8 +3,9 @@
 	require_once __DIR__."/Controllers/Perseids/Clients/Manager.php";
 	require_once __DIR__."/Entity/Client.php";
 
+
 	$app = new Silex\Application(); 
-	
+	$app['env'] = "dev";
 	/* Register needed by authbucket oauth-2 */
 	$app->register(new Silex\Provider\SecurityServiceProvider());
 	$app->register(new Silex\Provider\SerializerServiceProvider());
@@ -19,6 +20,8 @@
 	$app->register(new Silex\Provider\TwigServiceProvider());
 	$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
+	/* Our own stuff */
+
 
 
 	/* SimpleUser Instance */
@@ -28,17 +31,19 @@
 	/* oAuth2 Instance*/
 	$oAuth = new Perseids\OAuth2();
 	$app->register($oAuth);
+	require_once __DIR__."/Config/ORM.php";
 
 	/* oAuth2 Instance*/
-	$clients = new Perseids\Clients\Manager();
+	$clients = new Perseids\Clients\Manager($app['authbucket_oauth2.model_manager.factory']);
 	$app->register($clients);
+
 
 	/* Debug Mode */
 	$app['debug'] = true;
 
 	/* Routes */
-	$app->mount('/', $oAuth);
-	$app->mount('/', $clients);
+	$app->mount('/rest/oauth2', $oAuth);
+	$app->mount('/clients', $clients);
 	$app->mount('/user', $simpleUserProvider);
 
 	$app->get('/', function () use ($app) {
@@ -49,15 +54,9 @@
 	/* TWIG Configuration */
 	$app['twig.path'] = array(__DIR__.'/../templates');
 	$app['twig.options'] = array('cache' => __DIR__.'/../var/cache/twig');
+	#$app['twig']->addGlobal('layout', $app['twig']->loadTemplate('layout.twig'));
 
 	/* DATABASE CONFIGURATOR */
-	$app['db.options'] = array(
-		'driver' => 'pdo_mysql',
-		'host' => 'localhost',
-		'dbname' => 'oAuthServer',
-		'user' => 'perseids',
-		'password' => 'perseids',
-	);
 
 
 	//Security Encoder for it
@@ -107,8 +106,8 @@
 	);
 
 	$app['security.access_rules'] = array(
-	    array('^/clients', 'ROLE_ADMIN', 'http'),
-	    array('^.*$', 'ROLE_USER'),
+	    array('^/clients', 'ROLE_ADMIN', 'http')/*,
+	    array('^.*$', 'ROLE_USER'),*/
 	);
 
 	$app['user.passwordStrengthValidator'] = $app->protect(function(SimpleUser\User $user, $password) {

@@ -5,19 +5,27 @@ use Silex\Application;
 use Silex\ControllerProviderInterface;
 use Silex\ServiceProviderInterface;
 use AuthBucket\OAuth2\Entity\Clients;
+use AuthBucket\OAuth2\Model\InMemory\ModelManagerFactory;
 
 class Manager implements ServiceProviderInterface, ControllerProviderInterface
 {
-    public function load() {
-        /* Just some test stuff*/
-        $model = new Client();
-        $model  ->setClientId('51b2d34c3a661b5e111a694dfcb4b248')
-                ->setClientSecret('237ed57f218b41d07db6757afec3a41c')
-                ->setRedirectUri('http://oauthconnector.demo.drupal.authbucket.com/oauth/authorized2/1');
-        $manager->persist($model);
+    /** @var ClientManager */
+    protected $clientManager;
+    protected $modelManagerFactory;
+
+    /**
+     * [__construct description]
+     * @param ModelManagerFactoryInterface $modelManagerFactory [description]
+     */
+    public function __construct(ModelManagerFactory $modelManagerFactory = null)
+    {
+        if($modelManagerFactory === null) {
+            $modelManagerFactory = new ModelManagerInterface();
+        }
+        $this->modelManagerFactory = $modelManagerFactory;
     }
-    public function register(Application $app)
-    {      
+
+    public function register(Application $app) {      
 
     }
 
@@ -25,13 +33,30 @@ class Manager implements ServiceProviderInterface, ControllerProviderInterface
     {
         $controllers = $app['controllers_factory'];
 
+
+        $app->before(function () use ($app) {
+            $app['twig']->addGlobal('layout', null);
+            $app['twig']->addGlobal('layout', $app['twig']->loadTemplate('layout.twig'));
+        });
+
         $app->get('/clients', function(Application $app) {
-            if ($app['security']->isGranted('ROLE_ADMIN')) {
-                $text = "admin";
-            } else {
-                $text = "Not Admin";
-            }
-            return $text;
+
+            $clientManager = $this->modelManagerFactory->getModelManager('client');
+            $users = $this->clientManager->findBy($criteria, array(
+                'limit' => array($offset, $limit),
+                'order_by' => array($order_by, $order_dir),
+            ));
+            $numResults = $this->clientManager->findCount($criteria);
+
+            $paginator = new Paginator($numResults, $limit, $page,
+                $app['url_generator']->generate('user.list') . '?page=(:num)&limit=' . $limit . '&order_by=' . $order_by . '&order_dir=' . $order_dir
+            );
+
+            return $clients;
+            return $app['twig']->render('Clients/list.twig', array(
+                "clients" => $clientsList,
+                "paginator" => $paginator
+            ));
         })->bind('clients-list');
 
         return $controllers;

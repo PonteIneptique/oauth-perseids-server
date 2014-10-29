@@ -1,0 +1,36 @@
+{% extends layout  %}
+
+{% block title %}List Clients{% endblock %}
+
+{% block content %}
+
+    <h1>List Clients</h1>
+
+    {% if paginator.totalItems == 1 %}
+        <strong>1</strong> user found.
+    {% else %}
+        <strong>{{ paginator.totalItems }}</strong> users found.
+    {% endif %}
+
+    Showing <strong>{{ paginator.currentPageFirstItem }} - {{ paginator.currentPageLastItem }}</strong>.
+
+    {% for client in clients %}
+
+        <div class="media">
+
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="">{{ client.ClientID }}</a>
+                </h4>
+                <dl>
+                    <dt>Secret</dt><dd>{{ client.ClientSecret }}</dd>
+                    <dt>Redirect URI</dt><dd>{{ client.RedirectUri }}</dd>
+                </dl>
+            </div>
+        </div>
+
+    {% endfor %}
+
+    {{ paginator|raw }}
+
+{% endblock %}
