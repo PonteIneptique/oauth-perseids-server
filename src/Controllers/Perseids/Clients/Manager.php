@@ -69,7 +69,19 @@ class Manager implements ServiceProviderInterface, ControllerProviderInterface
                 "clients" => $clients,
                 "paginator" => $paginator
             ));
-        })->bind('clients-list');
+        })->bind('clients.list');
+
+        $app->get('/clients/edit/{id}', function(Application $app, Request $request, $id) {
+
+            $criteria = array("id" => $id);
+            $client = $this->clientManager->findOneBy(
+                $criteria
+            );
+
+            return $app['twig']->render('Clients/edit.twig', array(
+                "client" => $client
+            ));
+        })->bind('clients.edit');
 
         return $controllers;
     }
