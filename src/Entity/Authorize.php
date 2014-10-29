@@ -11,16 +11,16 @@
 
 namespace Perseids\Entity;
 
-use AuthBucket\OAuth2\Model\ClientInterface;
+use AuthBucket\OAuth2\Model\AuthorizeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Client
+ * Authorize
  *
- * @ORM\Table(name="authbucket_oauth2_client")
- * @ORM\Entity(repositoryClass="Perseids\Entity\ClientRepository")
+ * @ORM\Table(name="authbucket_oauth2_authorize")
+ * @ORM\Entity(repositoryClass="Perseids\Entity\AuthorizeRepository")
  */
-class Client implements ClientInterface
+class Authorize implements AuthorizeInterface
 {
     /**
      * @var integer
@@ -41,16 +41,16 @@ class Client implements ClientInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="client_secret", type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255)
      */
-    protected $clientSecret;
+    protected $username;
 
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="redirect_uri", type="text")
+     * @ORM\Column(name="scope", type="array")
      */
-    protected $redirectUri;
+    protected $scope;
 
     /**
      * Get id
@@ -67,7 +67,7 @@ class Client implements ClientInterface
      *
      * @param string $clientId
      *
-     * @return Client
+     * @return Authorize
      */
     public function setClientId($clientId)
     {
@@ -87,50 +87,50 @@ class Client implements ClientInterface
     }
 
     /**
-     * Set client_secret
+     * Set username
      *
-     * @param string $clientSecret
+     * @param string $username
      *
-     * @return Client
+     * @return Authorize
      */
-    public function setClientSecret($clientSecret)
+    public function setUsername($username)
     {
-        $this->clientSecret = $clientSecret;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get client_secret
+     * Get username
      *
      * @return string
      */
-    public function getClientSecret()
+    public function getUsername()
     {
-        return $this->clientSecret;
+        return $this->username;
     }
 
     /**
-     * Set redirect_uri
+     * Set scope
      *
-     * @param string $redirectUri
+     * @param array $scope
      *
-     * @return Client
+     * @return Authorize
      */
-    public function setRedirectUri($redirectUri)
+    public function setScope($scope)
     {
-        $this->redirectUri = $redirectUri;
+        $this->scope = $scope;
 
         return $this;
     }
 
     /**
-     * Get redirect_uri
+     * Get scope
      *
-     * @return string
+     * @return array
      */
-    public function getRedirectUri()
+    public function getScope()
     {
-        return $this->redirectUri;
+        return $this->scope;
     }
 }

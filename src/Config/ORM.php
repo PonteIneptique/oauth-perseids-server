@@ -24,7 +24,7 @@ $app['doctrine.orm.entity_manager'] = $app->share(function ($app) {
     $conn = $app['dbs']['default'];
     $em = $app['dbs.event_manager']['default'];
 
-    $driver = new AnnotationDriver(new AnnotationReader(), array(__DIR__.'/../../tests/AuthBucket/OAuth2/Tests/TestBundle/Entity'));
+    $driver = new AnnotationDriver(new AnnotationReader(), array(__DIR__.'/../src/Entity'));
     $cache = new FilesystemCache(__DIR__.'/../../var/cache/orm');
 
     $config = Setup::createConfiguration(false);
@@ -37,13 +37,13 @@ $app['doctrine.orm.entity_manager'] = $app->share(function ($app) {
 
 // Return entity classes for model manager.
 $app['authbucket_oauth2.model'] = array(
-    'access_token' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\AccessToken',
-    'authorize' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\Authorize',
-    'client' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\Client',
-    'code' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\Code',
-    'refresh_token' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\RefreshToken',
-    'scope' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\Scope',
-    'user' => 'AuthBucket\\OAuth2\\Tests\\TestBundle\\Entity\\User',
+    'access_token' => 'Perseids\\Entity\\AccessToken',
+    'authorize' => 'Perseids\\Entity\\Authorize',
+    'client' => 'Perseids\\Entity\\Client',
+    'code' => 'Perseids\\Entity\\Code',
+    'refresh_token' => 'Perseids\\Entity\\RefreshToken',
+    'scope' => 'Perseids\\Entity\\Scope',
+    'user' => 'Perseids\\Entity\\User',
 );
 
 // Add model managers from ORM.
