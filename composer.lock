@@ -810,12 +810,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-clients-manager.git",
-                "reference": "3ec4baacc228f781a9bddec1cb2fd1246df31517"
+                "reference": "4b878d861189c0bac516d16a3bb29cb12fffabc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PonteIneptique/oauth2-clients-manager/zipball/3ec4baacc228f781a9bddec1cb2fd1246df31517",
-                "reference": "3ec4baacc228f781a9bddec1cb2fd1246df31517",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-clients-manager/zipball/4b878d861189c0bac516d16a3bb29cb12fffabc8",
+                "reference": "4b878d861189c0bac516d16a3bb29cb12fffabc8",
                 "shasum": ""
             },
             "require": {
@@ -858,7 +858,7 @@
             "keywords": [
                 "oauth2"
             ],
-            "time": "2014-10-31 16:03:54"
+            "time": "2014-10-31 17:31:42"
         },
         {
             "name": "pimple/pimple",
