@@ -11,7 +11,7 @@
 	require_once "../vendor/autoload.php";
 
     $driver = new AnnotationDriver(new AnnotationReader(), array(__DIR__.'/../vendor/authbucket/oauth2-php/tests/AuthBucket/OAuth2/Tests/TestBundle/Entity'));
-    $cache = new FilesystemCache(__DIR__.'/../../var/cache/orm');
+    $cache = new FilesystemCache(__DIR__.'/../var/cache/orm');
 
     $config = Setup::createConfiguration(true);
     $config->setMetadataDriverImpl($driver);
