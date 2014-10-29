@@ -1,6 +1,7 @@
 <?php
 	require_once __DIR__."/Controllers/Perseids/oAuth2.php";
-	require_once __DIR__."/Controllers/Perseids/Clients/Manager.php";
+	require_once __DIR__."/Controllers/Perseids/Clients/ClientController.php";
+	require_once __DIR__."/Controllers/Perseids/Clients/ServiceProvider.php";
 
 	foreach (glob(__DIR__."/Entity/*.php") as $filename)
 	{
@@ -9,7 +10,6 @@
 
 
 	$app = new Silex\Application(); 
-	$app['env'] = "dev";
 	/* Register needed by authbucket oauth-2 */
 	$app->register(new Silex\Provider\SecurityServiceProvider());
 	$app->register(new Silex\Provider\SerializerServiceProvider());
@@ -24,8 +24,6 @@
 	$app->register(new Silex\Provider\TwigServiceProvider());
 	$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
-	/* Our own stuff */
-
 
 
 	/* SimpleUser Instance */
@@ -38,7 +36,9 @@
 	require_once __DIR__."/Config/ORM.php";
 
 	/* oAuth2 Instance*/
-	$clients = new Perseids\Clients\Manager($app['authbucket_oauth2.model_manager.factory']);
+	$clients = new Perseids\Clients\ClientServiceProvider(
+		$modelManagerFactory = $app['authbucket_oauth2.model_manager.factory']
+	);
 	$app->register($clients);
 
 
