@@ -16,6 +16,12 @@ mv composer.phar /usr/local/bin/composer
 In the root directory of this git, do `composer install`
 
 ##Database
+From your git directory :
+```shell
+cd install
+mysql -uRootMySQL -pPasswordRootMySql < ./database.sql
+php ../vendor/bin/doctrine orm:schema-tool:create
+```
 
 ##Testing the oAuth
 - http://oauth.perseids.org/api/v1.0/oauth2/authorize
