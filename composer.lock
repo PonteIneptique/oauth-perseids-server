@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b688a5235fe6b7077b2e12cf9b9cf0b0",
+    "hash": "982b3e3aa81aace140845bbcf5720c07",
     "packages": [
         {
             "name": "authbucket/oauth2-php",
@@ -806,7 +806,7 @@
         },
         {
             "name": "perseids/clients-manager",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-clients-manager.git",
@@ -859,6 +859,63 @@
                 "oauth2"
             ],
             "time": "2014-10-31 17:31:42"
+        },
+        {
+            "name": "perseids/oauth2-orm-bridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PonteIneptique/oauth2-simpleuser.git",
+                "reference": "f8c8e5ebe0ad3265b050bb8e94a8b491905f5bed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/f8c8e5ebe0ad3265b050bb8e94a8b491905f5bed",
+                "reference": "f8c8e5ebe0ad3265b050bb8e94a8b491905f5bed",
+                "shasum": ""
+            },
+            "require": {
+                "authbucket/oauth2-php": "~2.3",
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "jasongrimes/silex-simpleuser": "~1.7",
+                "perseids/clients-manager": "~0.1",
+                "php": ">=5.3.9",
+                "silex/silex": "~1.2",
+                "twig/twig": "~1.8"
+            },
+            "require-dev": {
+                "jasongrimes/silex-simpleuser": "~1.7",
+                "silex/silex": "~1.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.x-dev",
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Perseids\\OAuth2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thibault Clerice",
+                    "email": "leponteineptique@gmail.com",
+                    "homepage": "http://algorythme.net"
+                }
+            ],
+            "description": "An Implementation of ORM for oAuthBucket oAuth2 implementation using clients issued by perseids/clients-manager and user issued by jasongrimes/silex-simpleuser",
+            "homepage": "https://github.com/ponteineptique/oauth2-clients-manager",
+            "keywords": [
+                "oauth2"
+            ],
+            "time": "2014-10-31 17:53:39"
         },
         {
             "name": "pimple/pimple",
@@ -1821,7 +1878,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "perseids/clients-manager": 20
+        "perseids/oauth2-orm-bridge": 20
     },
     "prefer-stable": false,
     "platform": [],

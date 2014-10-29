@@ -5,6 +5,7 @@
         "jasongrimes/silex-simpleuser": "~1.7",
         "jasongrimes/paginator": "~1.0",
 		"doctrine/orm": "~2.2,>=2.2.3",
-		"perseids/clients-manager" : "0.1.*@dev"
+		"perseids/clients-manager" : "~0.1",
+		"perseids/oauth2-orm-bridge" : "0.1.*@dev"
     }
 }
