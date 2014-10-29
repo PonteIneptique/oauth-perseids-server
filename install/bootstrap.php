@@ -15,16 +15,13 @@
 	require_once "../vendor/autoload.php";
 
 	$isDevMode = false;
-	$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__.'/../src/Entity'), $isDevMode, null, null, false);
-	/*
-	    $driver = new AnnotationDriver(new AnnotationReader(), array(__DIR__.'/../src/Entity'));
-	    $cache = new FilesystemCache(__DIR__.'/../var/cache/orm');
-
-	    $config = Setup::createConfiguration(true);
-	    $config->setMetadataDriverImpl($driver);
-	    $config->setMetadataCacheImpl($cache);
-	    $config->setQueryCacheImpl($cache);
-    */
+	$config = Setup::createAnnotationMetadataConfiguration(
+		array(
+			/* That's Where you load the folder of all Entities */
+			__DIR__.'/../src/Entity', 
+			__DIR__.'/../vendor/perseids/clients-manager/src/Entity'
+		)
+	, $isDevMode, null, null, false);
 
 
 	// database configuration parameters

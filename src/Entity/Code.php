@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use AuthBucket\OAuth2\Model\CodeInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Code
  *
  * @ORM\Table(name="authbucket_oauth2_code")
- * @ORM\Entity(repositoryClass="Perseids\Entity\CodeRepository")
+ * @ORM\Entity(repositoryClass="Perseids\OAuth2\Entity\CodeRepository")
  */
 class Code implements CodeInterface
 {

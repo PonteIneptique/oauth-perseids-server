@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use AuthBucket\OAuth2\Model\AuthorizeInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Authorize
  *
  * @ORM\Table(name="authbucket_oauth2_authorize")
- * @ORM\Entity(repositoryClass="Perseids\Entity\AuthorizeRepository")
+ * @ORM\Entity(repositoryClass="Perseids\OAuth2\Entity\AuthorizeRepository")
  */
 class Authorize implements AuthorizeInterface
 {

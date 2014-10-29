@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use AuthBucket\OAuth2\Model\ModelInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -19,7 +19,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * User
  *
  * @ORM\Table(name="authbucket_oauth2_user")
- * @ORM\Entity(repositoryClass="Perseids\Entity\UserRepository")
+ * @ORM\Entity(repositoryClass="Perseids\OAuth2\Entity\UserRepository")
  */
 class User implements ModelInterface, UserInterface
 {

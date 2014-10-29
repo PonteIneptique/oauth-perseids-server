@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use AuthBucket\OAuth2\Model\AccessTokenInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AccessToken
  *
  * @ORM\Table(name="authbucket_oauth2_access_token")
- * @ORM\Entity(repositoryClass="Perseids\Entity\AccessTokenRepository")
+ * @ORM\Entity(repositoryClass="Perseids\OAuth2\Entity\AccessTokenRepository")
  */
 class AccessToken implements AccessTokenInterface
 {

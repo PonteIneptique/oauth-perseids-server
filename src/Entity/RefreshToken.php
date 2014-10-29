@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use AuthBucket\OAuth2\Model\RefreshTokenInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * RefreshToken
  *
  * @ORM\Table(name="authbucket_oauth2_refresh_token")
- * @ORM\Entity(repositoryClass="Perseids\Entity\RefreshTokenRepository")
+ * @ORM\Entity(repositoryClass="Perseids\OAuth2\Entity\RefreshTokenRepository")
  */
 class RefreshToken implements RefreshTokenInterface
 {

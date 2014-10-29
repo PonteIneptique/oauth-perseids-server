@@ -9,7 +9,8 @@
  * file that was distributed with this source code.
  */
 
-use Perseids\Entity\ModelManagerFactory;
+use Perseids\OAuth2\Entity\ModelManagerFactory;
+
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Cache\FilesystemCache;
 use Doctrine\ORM\EntityManager;
@@ -23,16 +24,6 @@ $app['db.options'] = require_once __DIR__."/db.php";
 $app['doctrine.orm.entity_manager'] = $app->share(function ($app) {
     $conn = $app['dbs']['default'];
     $em = $app['dbs.event_manager']['default'];
-
-    /*
-        $driver = new AnnotationDriver(new AnnotationReader(), array(__DIR__.'/../Entity'));
-        $cache = new FilesystemCache(__DIR__.'/../../var/cache/orm');
-
-        $config = Setup::createConfiguration(false);
-        $config->setMetadataDriverImpl($driver);
-        $config->setMetadataCacheImpl($cache);
-        $config->setQueryCacheImpl($cache);
-    */
    
     $isDevMode = false;
     $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__.'/../Entity'), $isDevMode, null, null, false);
@@ -42,13 +33,13 @@ $app['doctrine.orm.entity_manager'] = $app->share(function ($app) {
 
 // Return entity classes for model manager.
 $app['authbucket_oauth2.model'] = array(
-    'access_token' => 'Perseids\\Entity\\AccessToken',
-    'authorize' => 'Perseids\\Entity\\Authorize',
-    'client' => 'Perseids\\Entity\\Client',
-    'code' => 'Perseids\\Entity\\Code',
-    'refresh_token' => 'Perseids\\Entity\\RefreshToken',
-    'scope' => 'Perseids\\Entity\\Scope',
-    'user' => 'Perseids\\Entity\\User',
+    'access_token' => 'Perseids\\OAuth2\\Entity\\AccessToken',
+    'authorize' => 'Perseids\\OAuth2\\Entity\\Authorize',
+    'client' => 'Perseids\\ClientsManager\\Entity\\Client',
+    'code' => 'Perseids\\OAuth2\\Entity\\Code',
+    'refresh_token' => 'Perseids\\OAuth2\\Entity\\RefreshToken',
+    'scope' => 'Perseids\\OAuth2\\Entity\\Scope',
+    'user' => 'Perseids\\OAuth2\\Entity\\User',
 );
 
 // Add model managers from ORM.

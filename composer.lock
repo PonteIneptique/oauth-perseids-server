@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "efc917496ed1a77fe7c96b76be46b29b",
+    "hash": "b688a5235fe6b7077b2e12cf9b9cf0b0",
     "packages": [
         {
             "name": "authbucket/oauth2-php",
@@ -803,6 +803,62 @@
                 "user provider"
             ],
             "time": "2014-10-21 13:16:51"
+        },
+        {
+            "name": "perseids/clients-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PonteIneptique/oauth2-clients-manager.git",
+                "reference": "3ec4baacc228f781a9bddec1cb2fd1246df31517"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-clients-manager/zipball/3ec4baacc228f781a9bddec1cb2fd1246df31517",
+                "reference": "3ec4baacc228f781a9bddec1cb2fd1246df31517",
+                "shasum": ""
+            },
+            "require": {
+                "authbucket/oauth2-php": "~2.3",
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "jasongrimes/paginator": "~1.0",
+                "php": ">=5.3.9",
+                "silex/silex": "~1.2",
+                "twig/twig": "~1.8"
+            },
+            "require-dev": {
+                "jasongrimes/silex-simpleuser": "~1.7",
+                "silex/silex": "~1.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.x-dev",
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Perseids\\ClientsManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thibault Clerice",
+                    "email": "leponteineptique@gmail.com",
+                    "homepage": "http://algorythme.net"
+                }
+            ],
+            "description": "An Implementation of a Client Manager for oAuthBucket oAuth2 implementation",
+            "homepage": "https://github.com/ponteineptique/oauth2-clients-manager",
+            "keywords": [
+                "oauth2"
+            ],
+            "time": "2014-10-31 16:03:54"
         },
         {
             "name": "pimple/pimple",
@@ -1764,7 +1820,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "perseids/clients-manager": 20
+    },
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []

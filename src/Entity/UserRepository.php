@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
-use Perseids\Entity\AbstractEntityRepository;
+use Perseids\OAuth2\Entity\AbstractEntityRepository;
 
 /**
  * UserRepository

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Perseids\Entity;
+namespace Perseids\OAuth2\Entity;
 
 use AuthBucket\OAuth2\Model\AccessTokenManagerInterface;
-use Perseids\Entity\AbstractEntityRepository;
+use Perseids\OAuth2\Entity\AbstractEntityRepository;
 /**
  * AccessTokenRepository
  *
