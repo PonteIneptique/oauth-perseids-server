@@ -22,4 +22,18 @@ use Perseids\Entity\AbstractEntityRepository;
  */
 class ClientRepository extends AbstractEntityRepository implements ClientManagerInterface
 {
+    /**
+    * Count users that match the given criteria.
+    *
+    * @param array $criteria
+    * @return int The number of users that match the criteria.
+    */
+    public function findCount(array $criteria = array())
+    {
+        return $this->createQueryBuilder('id')
+            ->select('COUNT(id)')
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
 }

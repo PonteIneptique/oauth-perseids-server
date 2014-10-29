@@ -70,4 +70,5 @@ class UserRepository extends AbstractEntityRepository implements UserProviderInt
         return $this->getEntityName() === $class
             || is_subclass_of($class, $this->getEntityName());
     }
+    
 }

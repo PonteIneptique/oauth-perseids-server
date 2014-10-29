@@ -1,7 +1,11 @@
 <?php
 	require_once __DIR__."/Controllers/Perseids/oAuth2.php";
 	require_once __DIR__."/Controllers/Perseids/Clients/Manager.php";
-	require_once __DIR__."/Entity/Client.php";
+
+	foreach (glob(__DIR__."/Entity/*.php") as $filename)
+	{
+	    require_once $filename;
+	}
 
 
 	$app = new Silex\Application(); 
