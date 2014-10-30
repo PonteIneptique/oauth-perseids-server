@@ -753,16 +753,16 @@
         },
         {
             "name": "jasongrimes/silex-simpleuser",
-            "version": "1.7",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasongrimes/silex-simpleuser.git",
-                "reference": "c9f5bb04fb7c13ec8c8468e180f7bfcddb6944c5"
+                "reference": "0f6a92f2af43944366fad1d35c908b1e666eef6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasongrimes/silex-simpleuser/zipball/c9f5bb04fb7c13ec8c8468e180f7bfcddb6944c5",
-                "reference": "c9f5bb04fb7c13ec8c8468e180f7bfcddb6944c5",
+                "url": "https://api.github.com/repos/jasongrimes/silex-simpleuser/zipball/0f6a92f2af43944366fad1d35c908b1e666eef6a",
+                "reference": "0f6a92f2af43944366fad1d35c908b1e666eef6a",
                 "shasum": ""
             },
             "require": {
@@ -802,7 +802,7 @@
                 "user",
                 "user provider"
             ],
-            "time": "2014-10-21 13:16:51"
+            "time": "2014-11-01 19:18:09"
         },
         {
             "name": "perseids/clients-manager",
@@ -866,12 +866,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-simpleuser.git",
-                "reference": "f8c8e5ebe0ad3265b050bb8e94a8b491905f5bed"
+                "reference": "aaafa896e581f4f4f7e5e891f1dc77990721e1a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/f8c8e5ebe0ad3265b050bb8e94a8b491905f5bed",
-                "reference": "f8c8e5ebe0ad3265b050bb8e94a8b491905f5bed",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/aaafa896e581f4f4f7e5e891f1dc77990721e1a3",
+                "reference": "aaafa896e581f4f4f7e5e891f1dc77990721e1a3",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
             "keywords": [
                 "oauth2"
             ],
-            "time": "2014-10-31 17:53:39"
+            "time": "2014-10-31 20:10:50"
         },
         {
             "name": "pimple/pimple",
