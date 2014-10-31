@@ -5,7 +5,7 @@
 
 	#~Added
 	#
-	require_once "../src/Entity/AbstractEntityRepository.php";
+	require_once __DIR__ . "/../vendor/perseids/oauth2-orm-bridge/src/Entity/AbstractEntityRepository.php";
 	use Perseids\Entity\AbstractEntityRepository;
 /*
 	use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
@@ -18,14 +18,15 @@
 	$config = Setup::createAnnotationMetadataConfiguration(
 		array(
 			/* That's Where you load the folder of all Entities */
-			__DIR__.'/../src/Entity', 
-			__DIR__.'/../vendor/perseids/clients-manager/src/Entity'
+			//__DIR__.'/../src/Entity', 
+			__DIR__.'/../vendor/perseids/clients-manager/src/Entity',
+			__DIR__.'/../vendor/perseids/oauth2-orm-bridge/src/Entity'
 		)
 	, $isDevMode, null, null, false);
 
 
 	// database configuration parameters
-	$conn = require_once __DIR__."/../src/Config/db.php";
+	$conn = require_once __DIR__."/../src/config/db.php";
 
 	// obtaining the entity manager
 	$entityManager = EntityManager::create($conn, $config);

@@ -4,6 +4,8 @@
 	$app->register(new Silex\Provider\SecurityServiceProvider());
 
 	/* Register needed by authbucket oauth-2 */
+	$app->register(new Silex\Provider\TranslationServiceProvider()) ;
+	$app->register(new Silex\Provider\FormServiceProvider());
 	$app->register(new Silex\Provider\SerializerServiceProvider());
 	$app->register(new Silex\Provider\ServiceControllerServiceProvider());
 	$app->register(new Silex\Provider\ValidatorServiceProvider());
@@ -38,16 +40,16 @@
 	$app->register($oAuth);
 
 	$authorize = new Perseids\OAuth2\OAuth2Authorize($app);
-	$app->register($oAuth);
+	$app->register($authorize);
 
 	/* Debug Mode */
 	$app['debug'] = true;
 
 	/* Routes */
-	$app->mount('/api/oauth2', $oAuth);
+	$app->mount('/api/v1.0/oauth2', $oAuth);
 	$app->mount('/clients', $clients);
 	$app->mount('/user', $simpleUserProvider);
-	$app->mount('/oauth2', $authorize);
+	$app->mount('/user', $authorize);
 	require_once(__DIR__ . "/config/additional_routes.php");
 
 	/* TWIG Configuration */

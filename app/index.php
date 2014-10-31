@@ -5,4 +5,8 @@
 	$app = require __DIR__.'/../src/app.php';
 	$app->boot();
 	$app->run(); 
+	/*
+	print_r($app['twig.loader.filesystem']);
+	exit();
+	*/
 ?>
