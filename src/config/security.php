@@ -11,16 +11,22 @@
 				'http' => true,
 				'users' => $app->share(function($app) { return $app['user.manager']; }), #We reuse the stuff from SimpleUser
 			),
+
 			'oauth2_token' => array(
 		        'pattern' => '^/api/v1.0/oauth2/token$',
 		        'oauth2_token' => true,
 		    ),
+
 		    'oauth2_debug' => array(
 				'pattern' => '^/api/v1.0/oauth2/debug$',
 				'oauth2_resource' => true,
 			),
+		    'api' => array(
+		        'pattern' => '^/api/v1.0',
+		        'oauth2_resource' => true,
+		    ),
 			'secured_area' => array(
-				'pattern' => '^/.*$',
+				'pattern' => '^/user/.*$',
 				'anonymous' => true,
 				'remember_me' => array(),
 				'form' => array(
@@ -30,8 +36,6 @@
 				'logout' => array(
 					'logout_path' => '/user/logout',
 				),
-
-
 				'users' => $app->share(function($app) { return $app['user.manager']; }),
 			),
 		);

@@ -46,8 +46,9 @@
 	$app['debug'] = true;
 
 	/* Routes */
+	//$app->mount('/api/v1.0/oauth2', $oAuth);
 	$app->mount('/api/v1.0/oauth2', $oAuth);
-	$app->mount('/clients', $clients);
+	$app->mount('/user/clients', $clients);
 	$app->mount('/user', $simpleUserProvider);
 	$app->mount('/user', $authorize);
 	require_once(__DIR__ . "/config/additional_routes.php");

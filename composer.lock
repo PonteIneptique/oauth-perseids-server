@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d29f0139c46f2c6070c849c1c76c4cb4",
+    "hash": "3ebdef2410a16e2d995a5f6ffe16dcb5",
     "packages": [
         {
             "name": "authbucket/oauth2-php",
@@ -866,12 +866,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-simpleuser.git",
-                "reference": "d4a6c4ca66d566b4c91e3248af795ba57157c0a3"
+                "reference": "c8cfe3c82f9b270bd4730b26640d7025a3679fc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/d4a6c4ca66d566b4c91e3248af795ba57157c0a3",
-                "reference": "d4a6c4ca66d566b4c91e3248af795ba57157c0a3",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/c8cfe3c82f9b270bd4730b26640d7025a3679fc2",
+                "reference": "c8cfe3c82f9b270bd4730b26640d7025a3679fc2",
                 "shasum": ""
             },
             "require": {
@@ -882,6 +882,7 @@
                 "php": ">=5.3.9",
                 "silex/silex": "~1.2",
                 "symfony/form": "~2.3",
+                "symfony/locale": "~2.3",
                 "twig/twig": "~1.8"
             },
             "require-dev": {
@@ -916,7 +917,7 @@
             "keywords": [
                 "oauth2"
             ],
-            "time": "2014-11-03 14:34:36"
+            "time": "2014-11-03 15:55:04"
         },
         {
             "name": "pimple/pimple",
@@ -1569,6 +1570,54 @@
                 "localization"
             ],
             "time": "2014-10-01 05:50:18"
+        },
+        {
+            "name": "symfony/locale",
+            "version": "v2.5.6",
+            "target-dir": "Symfony/Component/Locale",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Locale.git",
+                "reference": "3ffb860b727a2a6542614a8cb897100ed5bbae73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Locale/zipball/3ffb860b727a2a6542614a8cb897100ed5bbae73",
+                "reference": "3ffb860b727a2a6542614a8cb897100ed5bbae73",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/intl": ">=2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Locale\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Locale Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-09-22 09:14:18"
         },
         {
             "name": "symfony/options-resolver",

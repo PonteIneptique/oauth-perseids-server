@@ -6,7 +6,7 @@
 	$app->boot();
 	$app->run(); 
 	/*
-	print_r($app['twig.loader.filesystem']);
+	print_r($app['security.authentication_provider.oauth2_token._proto']);
 	exit();
 	*/
 ?>
