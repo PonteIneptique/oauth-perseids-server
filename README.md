@@ -34,3 +34,26 @@ php ../vendor/bin/doctrine orm:schema-tool:create
   'state' : 'olcvl4u3vltckpua6hrm4s6b11'
 }
 ```
+
+##Deploy  on AWS
+
+Largely inspired from [rowan-m/asciigram](https://github.com/rowan-m/asciigram)
+
+```shell
+#From the git dir. Apps will be the folder where we store generally useful and shared stuff 
+mkdir ~#/apps
+cd ~#/apps
+
+#Then we download and unzip
+wget https://s3.amazonaws.com/elasticbeanstalk/cli/AWS-ElasticBeanstalk-CLI-2.6.4.zip
+cd ~/apps
+unzip AWS-ElasticBeanstalk-CLI-2.6.4.zip
+
+#We register our EB systeem in our path. You can change it in your bash_src as well
+export PATH=$PATH:/home/thibault/apps/AWS-ElasticBeanstalk-CLI-2.6.4/eb/linux/python2.7
+
+#We need to set-up our developer access
+
+
+```
+

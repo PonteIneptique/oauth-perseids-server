@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ebdef2410a16e2d995a5f6ffe16dcb5",
+    "hash": "2780cb4dac063e7f335a290dd2613b6a",
     "packages": [
         {
             "name": "authbucket/oauth2-php",
@@ -806,16 +806,16 @@
         },
         {
             "name": "perseids/clients-manager",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-clients-manager.git",
-                "reference": "4b878d861189c0bac516d16a3bb29cb12fffabc8"
+                "reference": "87648180e9f9734a0a3e6c30667322d614bc853a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PonteIneptique/oauth2-clients-manager/zipball/4b878d861189c0bac516d16a3bb29cb12fffabc8",
-                "reference": "4b878d861189c0bac516d16a3bb29cb12fffabc8",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-clients-manager/zipball/87648180e9f9734a0a3e6c30667322d614bc853a",
+                "reference": "87648180e9f9734a0a3e6c30667322d614bc853a",
                 "shasum": ""
             },
             "require": {
@@ -858,20 +858,20 @@
             "keywords": [
                 "oauth2"
             ],
-            "time": "2014-10-31 17:31:42"
+            "time": "2014-11-03 14:33:36"
         },
         {
             "name": "perseids/oauth2-orm-bridge",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-simpleuser.git",
-                "reference": "a0f35dba5d396a4f328a352cbb26d459356c08cb"
+                "reference": "48e55482feec2b18934d52693d978e3d9d95f17f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/a0f35dba5d396a4f328a352cbb26d459356c08cb",
-                "reference": "a0f35dba5d396a4f328a352cbb26d459356c08cb",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/48e55482feec2b18934d52693d978e3d9d95f17f",
+                "reference": "48e55482feec2b18934d52693d978e3d9d95f17f",
                 "shasum": ""
             },
             "require": {
@@ -917,7 +917,7 @@
             "keywords": [
                 "oauth2"
             ],
-            "time": "2014-11-03 18:42:02"
+            "time": "2014-11-03 23:10:24"
         },
         {
             "name": "pimple/pimple",
@@ -1141,6 +1141,54 @@
             "time": "2014-10-04 05:53:18"
         },
         {
+            "name": "symfony/config",
+            "version": "v2.5.6",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config.git",
+                "reference": "0316364bfebc8b080077c731a99f189341476bd7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/0316364bfebc8b080077c731a99f189341476bd7",
+                "reference": "0316364bfebc8b080077c731a99f189341476bd7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-09-23 05:25:11"
+        },
+        {
             "name": "symfony/console",
             "version": "v2.5.6",
             "target-dir": "Symfony/Component/Console",
@@ -1306,6 +1354,53 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
             "time": "2014-10-01 15:43:05"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v2.5.6",
+            "target-dir": "Symfony/Component/Filesystem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Filesystem.git",
+                "reference": "4e62fab0060a826561c78b665925b37c870c45f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/4e62fab0060a826561c78b665925b37c870c45f5",
+                "reference": "4e62fab0060a826561c78b665925b37c870c45f5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-09-22 09:14:18"
         },
         {
             "name": "symfony/form",
@@ -2176,9 +2271,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "perseids/oauth2-orm-bridge": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []
