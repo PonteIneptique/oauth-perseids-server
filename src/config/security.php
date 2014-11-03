@@ -17,12 +17,8 @@
 				'oauth2_token' => $app->share(function($app) { return $app['security.authentication_provider.oauth2_token.oauth2_token']; }),
 		    ),
 
-		    'oauth2_debug' => array(
-				'pattern' => '^/api/v1.0/oauth2/debug$',
-				'oauth2_resource' => true,
-			),
 		    'api' => array(
-		        'pattern' => '^/api/v1.0',
+		        'pattern' => '^/api/user$',
 		        'oauth2_resource' => true,
 		    ),
 			'secured_area' => array(

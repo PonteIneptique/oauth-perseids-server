@@ -38,19 +38,19 @@
 	$AuthBucket = new AuthBucket\OAuth2\Provider\AuthBucketOAuth2ServiceProvider();
 	$app->register($AuthBucket);
 
-/*
-	$oAuth = new Perseids\OAuth2\OAuth2ServiceProvider($app);
-	$app->register($oAuth);
-*/
+	/* oAuth2 Authorize Implementation with Form */
 	$authorize = new Perseids\OAuth2\OAuth2Authorize($app);
 	$app->register($authorize);
+
+	$PerseidsAPI= new Perseids\OAuth2\API($app);
+	$app->register($PerseidsAPI);
 
 	/* Debug Mode */
 	$app['debug'] = true;
 
 	/* Routes */
-	//$app->mount('/api/v1.0/oauth2', $oAuth);
 	$app->mount('/api/v1.0/oauth2', $AuthBucket);
+	$app->mount('/api/', $PerseidsAPI);
 	$app->mount('/user/clients', $clients);
 	$app->mount('/user', $simpleUserProvider);
 	$app->mount('/user', $authorize);
