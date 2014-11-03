@@ -4,9 +4,10 @@
         "authbucket/oauth2-php": "~2.3",
         "jasongrimes/silex-simpleuser": "~2.0",
         "jasongrimes/paginator": "~1.0",
-		"doctrine/orm": "~2.2,>=2.2.3",
-		"perseids/clients-manager" : "~0.1",
-		"perseids/oauth2-orm-bridge" : "0.1.*@dev",
+	"doctrine/orm": "~2.2,>=2.2.3",
+
+	"perseids/clients-manager" : "~0.1",
+	"perseids/oauth2-orm-bridge" : "~0.1",
         
         "symfony/validator": "~2.3",
         "symfony/config": "~2.3",
