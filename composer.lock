@@ -866,12 +866,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PonteIneptique/oauth2-simpleuser.git",
-                "reference": "c8cfe3c82f9b270bd4730b26640d7025a3679fc2"
+                "reference": "a0f35dba5d396a4f328a352cbb26d459356c08cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/c8cfe3c82f9b270bd4730b26640d7025a3679fc2",
-                "reference": "c8cfe3c82f9b270bd4730b26640d7025a3679fc2",
+                "url": "https://api.github.com/repos/PonteIneptique/oauth2-simpleuser/zipball/a0f35dba5d396a4f328a352cbb26d459356c08cb",
+                "reference": "a0f35dba5d396a4f328a352cbb26d459356c08cb",
                 "shasum": ""
             },
             "require": {
@@ -917,7 +917,7 @@
             "keywords": [
                 "oauth2"
             ],
-            "time": "2014-11-03 15:55:04"
+            "time": "2014-11-03 18:42:02"
         },
         {
             "name": "pimple/pimple",

@@ -22,6 +22,4 @@
     		//Setting the General Layout
     		'layout' => "layout.twig"
     	),
-    //	"userClass" => "\Perseids\OAuth2\Entity\User", 
-    //	"userRepo" => "\Perseids\OAuth2\Entity\UserRepository"
     );

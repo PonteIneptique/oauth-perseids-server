@@ -9,4 +9,5 @@
 	print_r($app['security.authentication_provider.oauth2_token._proto']);
 	exit();
 	*/
+//print_r($app["security"]->getToken());
 ?>

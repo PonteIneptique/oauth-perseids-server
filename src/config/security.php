@@ -14,7 +14,7 @@
 
 			'oauth2_token' => array(
 		        'pattern' => '^/api/v1.0/oauth2/token$',
-		        'oauth2_token' => true,
+				'oauth2_token' => $app->share(function($app) { return $app['security.authentication_provider.oauth2_token.oauth2_token']; }),
 		    ),
 
 		    'oauth2_debug' => array(
@@ -26,9 +26,9 @@
 		        'oauth2_resource' => true,
 		    ),
 			'secured_area' => array(
-				'pattern' => '^/user/.*$',
+				'pattern' => '^/user.*$',
 				'anonymous' => true,
-				'remember_me' => array(),
+				'http' => true,
 				'form' => array(
 					'login_path' => '/user/login',
 					'check_path' => '/user/login_check',

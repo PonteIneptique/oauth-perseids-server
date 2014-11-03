@@ -3,7 +3,9 @@
 
 	$app->register(new Silex\Provider\SecurityServiceProvider());
 
-	/* Register needed by authbucket oauth-2 */
+	/*
+	
+	Register needed by authbucket oauth-2 */
 	$app->register(new Silex\Provider\TranslationServiceProvider()) ;
 	$app->register(new Silex\Provider\FormServiceProvider());
 	$app->register(new Silex\Provider\SerializerServiceProvider());
@@ -36,9 +38,10 @@
 	$AuthBucket = new AuthBucket\OAuth2\Provider\AuthBucketOAuth2ServiceProvider();
 	$app->register($AuthBucket);
 
+/*
 	$oAuth = new Perseids\OAuth2\OAuth2ServiceProvider($app);
 	$app->register($oAuth);
-
+*/
 	$authorize = new Perseids\OAuth2\OAuth2Authorize($app);
 	$app->register($authorize);
 
@@ -47,7 +50,7 @@
 
 	/* Routes */
 	//$app->mount('/api/v1.0/oauth2', $oAuth);
-	$app->mount('/api/v1.0/oauth2', $oAuth);
+	$app->mount('/api/v1.0/oauth2', $AuthBucket);
 	$app->mount('/user/clients', $clients);
 	$app->mount('/user', $simpleUserProvider);
 	$app->mount('/user', $authorize);
