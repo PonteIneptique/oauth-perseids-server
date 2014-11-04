@@ -6,6 +6,10 @@
 				'pattern' => '^/user/login$',
 			),
 
+			'index' => array(
+				'pattern' => '^/$',
+				'users' => $app->share(function($app) { return $app['user.manager']; }),
+			),
 			'api_oauth2_authorize' => array(
 				'pattern' => '^/api/v1.0/oauth2/authorize$',
 				'http' => true,
@@ -27,7 +31,7 @@
 				'http' => true,
 				'form' => array(
 					'login_path' => '/user/login',
-					'check_path' => '/user/login_check',
+					'check_path' => '/user/login_check', 
 				),
 				'logout' => array(
 					'logout_path' => '/user/logout',
@@ -35,3 +39,7 @@
 				'users' => $app->share(function($app) { return $app['user.manager']; }),
 			),
 		);
+
+	$app['security.access_rules'] = array(
+        array('^/user/clients', 'ROLE_ADMIN')
+    );

@@ -37,7 +37,7 @@ php ../vendor/bin/doctrine orm:schema-tool:create
 
 ##Deploy  on AWS
 
-Largely inspired from [rowan-m/asciigram](https://github.com/rowan-m/asciigram)
+1 - Install [AWS EB Client](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html)
 
 ```shell
 #From the git dir. Apps will be the folder where we store generally useful and shared stuff 

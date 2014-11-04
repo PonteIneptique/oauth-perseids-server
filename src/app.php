@@ -35,7 +35,7 @@
 	$app->register($clients);
 
 	/* oAuth2 Instance*/
-	$AuthBucket = new AuthBucket\OAuth2\Provider\AuthBucketOAuth2ServiceProvider();
+	$AuthBucket = new Perseids\OAuth2\OAuth2ServiceProvider();
 	$app->register($AuthBucket);
 
 	/* oAuth2 Authorize Implementation with Form */
@@ -60,9 +60,6 @@
 	$app['twig.path'] = array(__DIR__.'/../templates');
 	$app['twig.options'] = array('cache' => __DIR__.'/../var/cache/twig');
 
-	/* DATABASE CONFIGURATOR */
-
-	// Mailer config. See http://silex.sensiolabs.org/doc/providers/swiftmailer.html
 	require_once __DIR__ . "/config/security.php";
 	require_once(__DIR__ . "/config/user.php");
 	require_once(__DIR__ . "/config/oauth2.php");
