@@ -1,7 +1,32 @@
 {
+    "authors": [
+        {
+            "email": "leponteineptique@gmail.com",
+            "homepage": "http://algorythme.net",
+            "name": "Thibault Clerice"
+        }
+    ],
+    "description": "An Implementation of a stand-alone oAuth2 web server with its own clients-manager and user-manager",
+
+    "homepage": "https://github.com/ponteineptique/oauth-perseids-server",
+    "keywords": [
+        "oauth2"
+    ],
+
+    "license": "MIT",
+
+    "name": "perseids/oauth-perseids-server",
+
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ponteineptique/oauth2-php.git"
+        }
+    ],
+
     "require": {
         "silex/silex": "~1.2",
-        "authbucket/oauth2-php": "~2.3",
+
         "jasongrimes/silex-simpleuser": "~2.0",
         "jasongrimes/paginator": "~1.0",
     	"doctrine/orm": "~2.2,>=2.2.3",
@@ -12,6 +37,7 @@
         "symfony/twig-bridge": "~2.3",
 
         "perseids/clients-manager" : "~0.1",
-        "perseids/oauth2-orm-bridge" : "~0.2"
+        "perseids/oauth2-orm-bridge" : "~0.2",
+        "authbucket/oauth2-php" : "2.3.4"
     }
 }
