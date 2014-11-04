@@ -36,24 +36,4 @@ php ../vendor/bin/doctrine orm:schema-tool:create
 ```
 
 ##Deploy  on AWS
-
-1 - Install [AWS EB Client](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html)
-
-```shell
-#From the git dir. Apps will be the folder where we store generally useful and shared stuff 
-mkdir ~#/apps
-cd ~#/apps
-
-#Then we download and unzip
-wget https://s3.amazonaws.com/elasticbeanstalk/cli/AWS-ElasticBeanstalk-CLI-2.6.4.zip
-cd ~/apps
-unzip AWS-ElasticBeanstalk-CLI-2.6.4.zip
-
-#We register our EB systeem in our path. You can change it in your bash_src as well
-export PATH=$PATH:/home/thibault/apps/AWS-ElasticBeanstalk-CLI-2.6.4/eb/linux/python2.7
-
-#We need to set-up our developer access
-
-
-```
-
+Follow [AWS EB Client](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html)
