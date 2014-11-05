@@ -23,17 +23,8 @@ mysql -uRootMySQL -pPasswordRootMySql < ./database.sql
 php ../vendor/bin/doctrine orm:schema-tool:create
 ```
 
-##Testing the oAuth
-- http://oauth.perseids.org/api/v1.0/oauth2/authorize
-```json
-{
-  'client_id' : 'implicit_grant'
-  'redirect_uri' : 'http://oauth.perseids.org'
-  'response_type' : 'token'
-  'scope' : 'demoscope1 demoscope2 demoscope3'
-  'state' : 'olcvl4u3vltckpua6hrm4s6b11'
-}
-```
+##Useful links
+- [Firewall for Silex](https://coderwall.com/p/ouvjhg/simple-silex-firewall-rules-explained)
 
 ##Deploy  on AWS
 Follow [AWS EB Client](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-set-up.html)
