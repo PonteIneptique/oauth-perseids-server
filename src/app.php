@@ -60,6 +60,8 @@
 	$app['twig.path'] = array(__DIR__.'/../templates');
 	$app['twig.options'] = array('cache' => __DIR__.'/../var/cache/twig');
 
+	$app['swiftmailer.options'] = array();
+	
 	require_once __DIR__ . "/config/security.php";
 	require_once(__DIR__ . "/config/user.php");
 	require_once(__DIR__ . "/config/oauth2.php");

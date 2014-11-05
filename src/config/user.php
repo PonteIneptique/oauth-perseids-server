@@ -1,9 +1,4 @@
 <?php
-	$app['security.access_rules'] = array(
-	    array('^/clients', 'ROLE_ADMIN', 'http'),
-	    array('^.*$', 'ROLE_USER'),/**/
-	);
-
 	$app['swiftmailer.options'] = array();
 	
 	$app['user.passwordStrengthValidator'] = $app->protect(function(SimpleUser\User $user, $password) {
