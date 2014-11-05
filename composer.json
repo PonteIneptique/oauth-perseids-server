@@ -29,7 +29,7 @@
 
         "jasongrimes/silex-simpleuser": "~2.0",
         "jasongrimes/paginator": "~1.0",
-    	"doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/orm": "~2.2,>=2.2.3",
         "symfony/validator": "~2.3",
         "symfony/config": "~2.3",
         "symfony/translation": "~2.3",
@@ -39,5 +39,11 @@
         "perseids/clients-manager" : "~0.1",
         "perseids/oauth2-orm-bridge" : "~0.2",
         "authbucket/oauth2-php" : "2.3.4"
+    },
+    "scripts" : {
+        "post-install-cmd" : [
+            "cd ./install && php ../vendor/bin/doctrine orm:schema-tool:create",
+            "cd ./install && php simpleuser.php"
+        ]
     }
 }
