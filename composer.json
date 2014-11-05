@@ -17,13 +17,6 @@
 
     "name": "perseids/oauth-perseids-server",
 
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/ponteineptique/oauth2-php.git"
-        }
-    ],
-
     "require": {
         "silex/silex": "~1.2",
 
