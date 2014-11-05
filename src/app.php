@@ -46,7 +46,7 @@
 	$app->register($PerseidsAPI);
 
 	/* Debug Mode */
-	$app['debug'] = true;
+	#$app['debug'] = true;
 
 	/* Routes */
 	$app->mount('/api/v1.0/oauth2', $AuthBucket);
