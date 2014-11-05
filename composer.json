@@ -39,5 +39,12 @@
         "perseids/clients-manager" : "~0.1",
         "perseids/oauth2-orm-bridge" : "~0.2",
         "authbucket/oauth2-php" : "2.3.4"
+    },
+    "scripts" : {
+        "post-install-cmd" : [
+            "cd ./install && php create_db.php",
+            "cd ./install && php ../vendor/bin/doctrine orm:schema-tool:create",
+            "cd ./install && php simpleuser.php"
+        ]
     }
 }
