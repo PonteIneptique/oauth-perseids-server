@@ -19,8 +19,15 @@ In the root directory of this git, do `composer install`
 From your git directory :
 ```shell
 cd install
+
+#Create the DB
 mysql -uRootMySQL -pPasswordRootMySql < ./database.sql
+
+#Use Doctrine to create the schema
 php ../vendor/bin/doctrine orm:schema-tool:create
+
+#Override users DB
+mysql -uRootMySQL -pPasswordRootMySql < ./database.sql
 ```
 
 ##Useful links
