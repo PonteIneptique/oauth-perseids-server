@@ -1,13 +1,12 @@
 <?php 
 	$app['security.firewalls'] = array(
 			'api_oauth2_authorize' => array(
-				'pattern' => '^/api/v1.0/oauth2/authorize$',
-				#'http' => true,
-				'users' => $app->share(function($app) { return $app['user.manager']; }), #We reuse the stuff from SimpleUser
+				'pattern' => '^/api/oauth2/authorize$',
+				'users' => $app->share(function($app) { return $app['user.manager']; }), 
 			),
 
 			'oauth2_token' => array(
-		        'pattern' => '^/api/v1.0/oauth2/token$',
+		        'pattern' => '^/api/oauth2/token$',
 				'oauth2_token' => $app->share(function($app) { return $app['security.authentication_provider.oauth2_token.oauth2_token']; }),
 		    ),
 
@@ -27,7 +26,6 @@
 		);
 
    $app['security.access_rules'] = array(
-        #array('^/user', 'ROLE_USER'),
         array('^/user/login$', 'IS_AUTHENTICATED_ANONYMOUSLY'),
         array('^/user/register$', 'IS_AUTHENTICATED_ANONYMOUSLY'),
         array('^/$', 'IS_AUTHENTICATED_ANONYMOUSLY'),

@@ -49,7 +49,7 @@
 	#$app['debug'] = true;
 
 	/* Routes */
-	$app->mount('/api/v1.0/oauth2', $AuthBucket);
+	$app->mount('/api/oauth2', $AuthBucket);
 	$app->mount('/api/', $PerseidsAPI);
 	$app->mount('/user/clients', $clients);
 	$app->mount('/user', $simpleUserProvider);
