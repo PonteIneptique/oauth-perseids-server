@@ -8,3 +8,7 @@ html, body {
 .panel-primary > .panel-heading a {
 	color:white;
 }
+
+body .text-muted {
+	color:white;
+}
