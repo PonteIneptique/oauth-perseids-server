@@ -3,7 +3,7 @@
     use Doctrine\ORM\EntityManager;
     use Doctrine\ORM\Tools\Setup;
 	use Perseids\OAuth2\Entity\ModelManagerFactory;
-    use Symfony\Component\Security\Core\Encoder\PlaintextPasswordEncoder;
+    use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 
     // Return entity classes for model manager.
     $app['authbucket_oauth2.model'] = array(
@@ -17,7 +17,7 @@
 
 
     $app['security.encoder.digest'] = $app->share(function ($app) {
-        return new PlaintextPasswordEncoder();
+        return new MessageDigestPasswordEncoder();
     });
 
     $app['doctrine.orm.entity_manager'] = $app->share(function ($app) {
