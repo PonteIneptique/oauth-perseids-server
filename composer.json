@@ -43,7 +43,6 @@
     },
     "scripts" : {
         "post-install-cmd" : [
-            "cd ./cmd && php create_db.php",
             "cd ./cmd && php ../vendor/bin/doctrine orm:schema-tool:create"
         ]
     }
