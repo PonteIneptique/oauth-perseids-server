@@ -1,5 +1,5 @@
 <?php
-return array(
+return array
 	/*
 	'driver' => 'pdo_mysql',
 	'port' => $_SERVER['RDS_PORT'],
@@ -8,10 +8,6 @@ return array(
 	'user' => $_SERVER['RDS_USERNAME'],
 	'password' => $_SERVER['RDS_PASSWORD'],
 	*/
-	'driver' => 'pdo_mysql',
-	'host' => 'localhost',
-	'port' => '3306',
-	'user' => 'perseids',
-	'password' => 'perseids',
-	'dbname' => "oAuthServer"
+    'driver' => 'pdo_sqlite',
+    'path' => __DIR__.'/../../cache/.ht.sqlite',
 );

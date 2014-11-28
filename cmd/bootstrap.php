@@ -7,7 +7,11 @@
 	#
 	require_once __DIR__ . "/../vendor/perseids/oauth2-orm-bridge/src/Entity/AbstractEntityRepository.php";
 	use Perseids\Entity\AbstractEntityRepository;
-	
+/*
+	use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
+	use Doctrine\Common\Annotations\AnnotationReader;
+	use Doctrine\Common\Cache\FilesystemCache;
+*/
 	require_once "../vendor/autoload.php";
 
 	$isDevMode = false;
@@ -16,7 +20,8 @@
 			/* That's Where you load the folder of all Entities */
 			//__DIR__.'/../src/Entity', 
 			__DIR__.'/../vendor/perseids/clients-manager/src/Entity',
-			__DIR__.'/../vendor/perseids/oauth2-orm-bridge/src/Entity'
+			__DIR__.'/../vendor/perseids/oauth2-orm-bridge/src/Entity',
+			__DIR__.'/../vendor/jasongrimes/silex-simpleuser/src/SimpleUser/Entity'
 		)
 	, $isDevMode, null, null, false);
 
