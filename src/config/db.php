@@ -1,5 +1,5 @@
 <?php
-return array
+return array(
 	/*
 	'driver' => 'pdo_mysql',
 	'port' => $_SERVER['RDS_PORT'],
