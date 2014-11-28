@@ -38,7 +38,7 @@
 
         "perseids/clients-manager" : "~0.1",
         "perseids/oauth2-orm-bridge" : "~0.2",
-        "authbucket/oauth2-php" : "2.3.4"
+        "authbucket/oauth2-php" : "~2.4"
     },
     "scripts" : {
         "post-install-cmd" : [
