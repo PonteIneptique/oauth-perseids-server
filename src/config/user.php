@@ -1,7 +1,7 @@
 <?php
 	$app['swiftmailer.options'] = array();
 	
-	$app['user.passwordStrengthValidator'] = $app->protect(function(SimpleUser\User $user, $password) {
+	$app['user.passwordStrengthValidator'] = $app->protect(function(SimpleUser\Entity\User $user, $password) {
 		if (strlen($password) < 4) {
 			return 'Password must be at least 4 characters long.';
 		}
