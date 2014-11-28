@@ -20,7 +20,8 @@
 			/* That's Where you load the folder of all Entities */
 			//__DIR__.'/../src/Entity', 
 			__DIR__.'/../vendor/perseids/clients-manager/src/Entity',
-			__DIR__.'/../vendor/perseids/oauth2-orm-bridge/src/Entity'
+			__DIR__.'/../vendor/perseids/oauth2-orm-bridge/src/Entity',
+			__DIR__.'/../vendor/jasongrimes/silex-simpleuser/src/SimpleUser/Entity'
 		)
 	, $isDevMode, null, null, false);
 
