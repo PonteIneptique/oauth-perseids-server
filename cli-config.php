@@ -5,6 +5,7 @@
 	
 
 	// replace with mechanism to retrieve EntityManager in your app
-	$entityManager = require_once __DIR__.'/bootstrap.php';
+	$entityManager = require_once __DIR__.'/cmd/bootstrap.php';
 
 	return ConsoleRunner::createHelperSet($entityManager);
+?>

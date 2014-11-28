@@ -12,7 +12,7 @@
 	use Doctrine\Common\Annotations\AnnotationReader;
 	use Doctrine\Common\Cache\FilesystemCache;
 */
-	require_once "../vendor/autoload.php";
+	require_once __DIR__ . "/../vendor/autoload.php";
 
 	$isDevMode = false;
 	$config = Setup::createAnnotationMetadataConfiguration(
