@@ -20,7 +20,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/ponteineptique/oauth2-php.git"
+            "url": "https://github.com/ponteineptique/silex-simpleuser.git"
         }
     ],
 
