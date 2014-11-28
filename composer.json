@@ -27,9 +27,10 @@
     "require": {
         "silex/silex": "~1.2",
 
-        "jasongrimes/silex-simpleuser": "~2.0",
+        "jasongrimes/silex-simpleuser": "*",
         "jasongrimes/paginator": "~1.0",
     	"doctrine/orm": "~2.2,>=2.2.3",
+
         "symfony/validator": "~2.3",
         "symfony/config": "~2.3",
         "symfony/translation": "~2.3",
